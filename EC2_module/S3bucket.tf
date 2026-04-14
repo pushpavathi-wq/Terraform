@@ -1,3 +1,3 @@
-resource "aws_s3_bucket" "pushpavathi" {
-  bucket = "pushpavathi-terraform-state"
-}
+# resource "aws_s3_bucket" "pushpavathi" {
+#   bucket = "pushpavathi-terraform-state"
+# }
