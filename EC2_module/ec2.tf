@@ -1,8 +1,8 @@
 
 # AWS Instance
 resource "aws_instance" "newinstance" {
-  ami                    = "ami-0ac4dfaf1c5c0cce9" # Replace with a valid AMI ID
-  instance_type          = "t2.micro"
+  ami                    = "ami-0ec10929233384c7f" # Replace with a valid AMI ID
+  instance_type          = "t3.micro"
   vpc_security_group_ids = [var.sg_id]
   
 
