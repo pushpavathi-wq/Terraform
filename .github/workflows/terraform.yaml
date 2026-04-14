@@ -29,14 +29,19 @@ jobs:
       # 4. Terraform Init
       - name: Terraform Init
         run: terraform init
+        working-directory: EC2_module
+        
 
       # 5. Terraform Validate
       - name: Terraform Validate
         run: terraform validate
+        working-directory: EC2_module
+       
 
       # 6. Terraform Plan
       - name: Terraform Plan
         run: terraform plan
+        working-directory: EC2_module
 
       # 7. Terraform Apply
       - name: Terraform Apply
