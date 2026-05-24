@@ -35,3 +35,38 @@ variable "common_tags" {
 
   
 }
+
+
+variable "internet_gateway_tags" {
+    default = {}
+  
+}
+
+variable "cidr_publicsubnet" {
+    validation {
+      condition = length(var.cidr_publicsubnet) == 2
+      error_message = "please pass two subnets range within VPC"
+    }
+  
+}
+
+
+variable "cidr_privatesubnet" {
+    validation {
+      condition = length(var.cidr_privatesubnet) == 2
+      error_message = "please pass two subnets range within VPC"
+    }
+  
+}
+
+
+variable "cidr_databasesubnet" {
+    validation {
+      condition = length(var.cidr_databasesubnet) == 2
+      error_message = "please pass two subnets range within VPC"
+    }
+  
+}
+
+
+
