@@ -34,7 +34,7 @@ resource "aws_vpc" "main" {
 
 # Create public subnets(2)
 
-resource "aws_subnet" "public-subnet" {
+resource "aws_subnet" "public_subnet" {
   count = length(var.cidr_publicsubnet)
   vpc_id     = aws_vpc.main.id
   cidr_block = var.cidr_publicsubnet[count.index]
@@ -104,7 +104,7 @@ resource "aws_eip" "example-eip" {  # no need of VPC id here as it is same modul
 
 resource "aws_nat_gateway" "NAT" {
   allocation_id = aws_eip.example-eip.id
-  subnet_id     = aws_subnet.public-subnet[0].id
+  subnet_id     = aws_subnet.public_subnet[0].id
 
   tags = merge(
     var.common_tags,
@@ -201,7 +201,7 @@ resource "aws_route" "route_database" {
 
 resource "aws_route_table_association" "association_public" {
   count = length(var.cidr_publicsubnet)
-  subnet_id      = aws_subnet.public-subnet[count.index].id
+  subnet_id      = aws_subnet.public_subnet[count.index].id
   route_table_id = aws_route_table.public_route.id
 }
 

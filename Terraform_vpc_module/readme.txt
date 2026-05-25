@@ -10,3 +10,6 @@
 │
 │ The "count" object can only be used in "module", "resource", and "data" blocks, and only when the "count" argument is
 │ set.
+
+
+/* sending/printing the VPC id,public subnets,private subnets, database subnets in output...
