@@ -183,7 +183,7 @@ resource "aws_route" "route_public" {
 resource "aws_route" "route_private" {
   route_table_id            = aws_route_table.private_route.id
   destination_cidr_block    = "0.0.0.0/0"
-  gateway_id = aws_internet_gateway.maingateway.id
+  gateway_id = aws_nat_gateway.NAT.id
 }
 
 
@@ -192,7 +192,7 @@ resource "aws_route" "route_private" {
 resource "aws_route" "route_database" {
   route_table_id            = aws_route_table.database_route.id
   destination_cidr_block    = "0.0.0.0/0"
-  gateway_id = aws_internet_gateway.maingateway.id
+  gateway_id = aws_nat_gateway.NAT.id
 }
 
 
