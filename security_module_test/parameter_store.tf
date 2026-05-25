@@ -1,0 +1,9 @@
+resource "aws_ssm_parameter" "expense-vpc-id" {
+  name  = "/expense/dev/vpc_id"
+  type  = "String"
+  value = "module.security_group.sg"
+}
+
+# create the parameter store and store the VPC id
+# If the VPC id is not provided in main module output we cant access hehe in user module.. 
+# we just give the CIDR for the VPC,VPC id is created after creating vpc. 
