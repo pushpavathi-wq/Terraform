@@ -1,7 +1,7 @@
 resource "aws_ssm_parameter" "expense-vpc-id" {
   name  = "/${var.project_name}/${var.environment}/vpc_id"
   type  = "String"
-  value = "module.vpc.vpc_id"
+  value = module.vpc.vpc_id
 }
 
 # create the parameter store and store the VPC id
