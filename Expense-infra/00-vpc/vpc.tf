@@ -1,5 +1,5 @@
 module "vpc" {
-  source = "git::https://github.com/pushpavathi-wq/Terraform/Terraform_vpc_module.git?ref=main"
+  source = "git::https://github.com/pushpavathi-wq/Terraform.git//Terraform_vpc_module?ref=main"
   project_name = var.project_name
   environment = var.environment
   common_tags = var.common_tags      # just we are putting common tags in 1 variable

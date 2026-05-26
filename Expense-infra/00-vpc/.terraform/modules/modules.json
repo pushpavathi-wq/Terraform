@@ -1,1 +1,1 @@
-{"Modules":[{"Key":"","Source":"","Dir":"."}]}
+{"Modules":[{"Key":"","Source":"","Dir":"."},{"Key":"vpc","Source":"git::https://github.com/pushpavathi-wq/Terraform.git//Terraform_vpc_module?ref=main","Dir":".terraform/modules/vpc/Terraform_vpc_module"}]}

@@ -25,8 +25,8 @@ resource "aws_ssm_parameter" "private_subnet_ids" {
 
 
 # stote database subnets in parameter store
-resource "aws_ssm_parameter" "database_subnet_ids" {
+resource "aws_ssm_parameter" "public_database_ids" {
   name  = "/${var.project_name}/${var.environment}/database_subnet_ids"
   type  = "StringList"
-  value = join(",", module.vpc.database_subnet_ids)
+  value = join(",", module.vpc.public_database_ids)
   }    
