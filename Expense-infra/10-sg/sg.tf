@@ -50,7 +50,7 @@ module "alb-sg" {
   project_name = "expense"
   environment  = "dev"
   vpc_id       = data.aws_ssm_parameter.vpc_id.value
-  name = "albsg"
+  sg_name = "albsg" # i am unable to debug error so passing values through command prompt
   
 
 
@@ -61,6 +61,7 @@ module "bastion_sg" {
   project_name = var.project_name
   environment  = var.environment
   vpc_id       = data.aws_ssm_parameter.vpc_id.value
+  sg_name     = "bastionsg"
 
 
 }

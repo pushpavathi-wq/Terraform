@@ -18,7 +18,7 @@
 
 
 resource "aws_security_group" "main" {
-  name        = "${var.project_name}-${var.environment}-${var.sg_name}-sg"
+  name        = "${var.project_name}-${var.environment}-sg"
   description = "create security group"
   vpc_id      = var.vpc_id
 
@@ -32,7 +32,7 @@ resource "aws_security_group" "main" {
 
 
   tags = {
-    Name = "${var.project_name}-${var.environment}-${var.sg_name}-sg"
+    Name = "${var.project_name}-${var.environment}-sg"
   }
 
 
