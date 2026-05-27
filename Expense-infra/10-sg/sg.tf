@@ -49,7 +49,6 @@ module "alb-sg" {
   source       = "git::https://github.com/pushpavathi-wq/Terraform.git//securitygroup_module?ref=main"
   project_name = "expense"
   environment  = "dev"
-  name = "albsg"
   vpc_id       = data.aws_ssm_parameter.vpc_id.value
   
 
@@ -60,7 +59,6 @@ module "bastion_sg" {
   source       = "git::https://github.com/pushpavathi-wq/Terraform.git//securitygroup_module?ref=main"
   project_name = var.project_name
   environment  = var.environment
-  name = "bastionsg"
   vpc_id       = data.aws_ssm_parameter.vpc_id.value
 
 

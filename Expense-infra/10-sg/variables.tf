@@ -15,6 +15,6 @@ variable "environment" {
   
 # }
 
-# variable "sg_name" {
+variable "name" {
   
-# }
+}
