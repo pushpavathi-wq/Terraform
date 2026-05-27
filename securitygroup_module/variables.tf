@@ -15,7 +15,7 @@ variable "vpc_id" {
 }
 
 
-variable "name" {
+variable "sg_name" {
 
 }
 

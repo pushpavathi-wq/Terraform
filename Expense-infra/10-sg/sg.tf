@@ -50,6 +50,7 @@ module "alb-sg" {
   project_name = "expense"
   environment  = "dev"
   vpc_id       = data.aws_ssm_parameter.vpc_id.value
+  name = "albsg"
   
 
 
