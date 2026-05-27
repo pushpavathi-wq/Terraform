@@ -1,14 +1,16 @@
 
 # creating sg for mysql server
-module "mysql-sg" {
-  source       = "github.com/GArunkumar999/terraform.git/sg-module?ref=main"
-  project_name = "expense"
-  environment  = "dev"
-  description  = "security group for mysql"
-  app          = "mysql"
-  vpc_id       = data.aws_ssm_parameter.vpc_id.value
+# module "alb-ingress-sg" {
+#   source       = ""
+#   project_name = "expense"
+#   environment  = "dev"
+#   description  = "security group for alb ingress"
+#   app          = "back-alb"
+#   vpc_id       = data.aws_ssm_parameter.vpc_id.value
 
-}
+
+
+# }
 
 
 # # creating sg for backend server
@@ -40,3 +42,26 @@ module "mysql-sg" {
 #     vpc_id = data.aws_ssm_parameter.vpc_id
     
 # }
+
+
+
+module "alb-sg" {
+  source       = "git::https://github.com/pushpavathi-wq/Terraform.git//securitygroup_module?ref=main"
+  project_name = "expense"
+  environment  = "dev"
+  sg_name = "albsg"
+  vpc_id       = data.aws_ssm_parameter.vpc_id.value
+  
+
+
+}
+
+module "bastion_sg" {
+  source       = "git::https://github.com/pushpavathi-wq/Terraform.git//securitygroup_module?ref=main"
+  project_name = var.project_name
+  environment  = var.environment
+  sg_name = "bastionsg"
+  vpc_id       = data.aws_ssm_parameter.vpc_id.value
+
+
+}
