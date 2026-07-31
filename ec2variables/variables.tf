@@ -28,3 +28,15 @@ variable "to_port" {
     default = 22
   
 }
+
+
+
+
+
+
+variable "ami" {
+  type = "string"
+  description = " ami id change"
+  default = " "
+
+}
